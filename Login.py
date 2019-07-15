@@ -13,19 +13,20 @@ title = driver.title
 def loginmethod():
 
     driver.find_element_by_xpath("//span[contains(text(),'Hello, Sign in')]").click()
-    driver.find_element_by_id('ap_email').send_keys('jmanali4096@gmail.com')
+    driver.find_element_by_id('ap_email').send_keys('xyz.com')
     driver.find_element_by_id('continue').click()
-    driver.find_element_by_id('ap_password').send_keys('manali123')
+    driver.find_element_by_id('ap_password').send_keys('#####')
     driver.find_element_by_id('signInSubmit').click()
     # catch user name
     text = driver.find_element_by_xpath('//*[@id="nav-link-accountList"]/span[1]').text
-    if text.__contains__('Manali'):
+    if text.__contains__('xyz'):
         print('Login Successfully')
     else:
         print('Not login Successfully')
 
 
 def logoutmethod():
+    # hover function
     element_hover = driver.find_element_by_id('nav-link-accountList')
     hover = ActionChains(driver).move_to_element(element_hover)
     hover.perform()
